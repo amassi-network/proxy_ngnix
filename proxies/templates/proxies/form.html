@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Proxy</title>
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Proxy</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-success" type="submit">Enregistrer</button>
+        <a class="btn btn-secondary" href="{% url 'dashboard' %}">Annuler</a>
+    </form>
+</div>
+</body>
+</html>

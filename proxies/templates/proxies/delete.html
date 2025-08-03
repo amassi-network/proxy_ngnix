@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Supprimer</title>
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Supprimer {{ proxy.domain }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Confirmer la suppression ?</p>
+        <button class="btn btn-danger" type="submit">Supprimer</button>
+        <a class="btn btn-secondary" href="{% url 'dashboard' %}">Annuler</a>
+    </form>
+</div>
+</body>
+</html>

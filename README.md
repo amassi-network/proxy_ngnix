@@ -129,3 +129,21 @@ Bibliothèques Python :
 ssl, OpenSSL, os, subprocess
 
 datetime pour la gestion des dates
+
+## Déploiement
+
+1. Installer les dépendances Python (Django 4.2+, mysqlclient).
+2. Définir les variables d'environnement MySQL : `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD`.
+   À défaut, une base SQLite locale est utilisée.
+3. Lancer les migrations et créer un super-utilisateur :
+   ```bash
+   python manage.py migrate
+   python manage.py createsuperuser
+   ```
+4. Démarrer le serveur HTTPS en écoutant sur le port 8080 :
+   ```bash
+   python manage.py runserver 0.0.0.0:8080
+   ```
+
+Par défaut, les certificats sont stockés dans `/etc/nginx/certs` et les configurations dans `/etc/nginx/sites-enabled`.
+Ces chemins peuvent être remplacés par les variables `NGINX_CERT_DIR` et `NGINX_SITES_DIR` pour les environnements de test.
